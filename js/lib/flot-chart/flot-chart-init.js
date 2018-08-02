@@ -191,6 +191,9 @@ $( function () {
 		grid: {
 			hoverable: true
 		},
+        legend: {
+            show: true
+        },
 		tooltip: {
 			show: true,
 			content: "%p.0%, %s, n=%n", // show percentages, rounding to 2 decimal places

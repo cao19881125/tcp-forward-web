@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <link href="css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+    <link href="css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+    <link href="css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="css/helper.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+</head>
+<body>
+<h2>click on button</h2>
+<div class="container">
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-valide" action="index.html" method="post">
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="val-port">端口号 <span class="text-danger">*</span></label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="val-port" name="val-port">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="val-innerip">内网IP <span class="text-danger">*</span></label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="val-innerip" name="val-innerip">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="val-innerport">内网端口 <span class="text-danger">*</span></label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="val-innerport" name="val-innerport">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="val-tag">tag <span class="text-danger">*</span></label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="val-tag" name="val-tag">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="close1()">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="js/lib/jquery/jquery.min.js"></script>
+<script src="js/lib/jquery/jquery.cookie.js"></script>
+<script type="text/javascript">
+
+function close1() {
+    console.log('===')
+    $(".modal-backdrop").remove();
+}
+
+$('#myModal').on('hide.bs.modal', function (event) {
+    console.log('***********')
+    $('#val-port').val('')
+})
+
+console.log($.cookie('go-back'))
+
+if($.cookie('go-back') == undefined){
+    console.log(true)
+}else {
+    console.log(false)
+}
+
+//$.cookie('go-back',null, { path: '/' })
+
+
+$.cookie('go-back','',{ expires: -1 })
+
+//if($.cookie('go-back')){
+//    console.log(true)
+//}else {
+//    console.log(false)
+//}
+function test_fun(data) {
+    //return [12,'123',true]
+    return {
+        result:true,
+        data:'123'
+    }
+}
+
+console.log(test_fun().result)
+var tt = {}
+tt.d = 'hello';
+tt['c'] = 'world'
+console.log(tt)
+
+</script>
+</body>
+</html>
