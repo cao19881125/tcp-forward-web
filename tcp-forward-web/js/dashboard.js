@@ -143,10 +143,14 @@ $(document).ready(function() {
         set_client_table(result_array)
     }
     
+    function error_handle() {
+        toastr.error('获取数据失败')
+    }
+    
     $(function () {
 
-        send_request('forward_server/channel',"GET",null,handle_port_response)
-        send_request('forward_server/client_connection',"GET",null,handle_client_response)
+        send_request('forward_server/channel',"GET",null,handle_port_response,error_handle)
+        send_request('forward_server/client_connection',"GET",null,handle_client_response,error_handle)
 
 
     });
